@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.media.MediaView?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <ImageView fitHeight="601.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/mirage.jpg" />
          </image></ImageView>
+      <MediaView fx:id="video" fitHeight="601.0" fitWidth="800.0" />
+      <MenuButton layoutX="354.0" layoutY="466.0" mnemonicParsing="false" popupSide="TOP" text="tester">
+        <items>
+          <MenuItem fx:id="ticketBoothFromRamp" mnemonicParsing="false" onAction="#playTicketBoothFromRamp" text="Action 1" />
+          <MenuItem fx:id="ticketBoothFromApts" mnemonicParsing="false" text="Action 2" />
+        </items>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </MenuButton>
    </children>
 </Pane>
